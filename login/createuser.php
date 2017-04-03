@@ -19,9 +19,9 @@ if ($pw1 != $pw2) {
 
     echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Password must be at least 4 characters</div><div id="returnVal" style="display:none;">false</div>';
 
-} elseif (!filter_var($newemail, FILTER_VALIDATE_EMAIL) == true) {
-
-    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Must provide a valid email address</div><div id="returnVal" style="display:none;">false</div>';
+//} elseif (!filter_var($newemail, FILTER_VALIDATE_EMAIL) == true) {
+//
+//    echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Must provide a valid email address</div><div id="returnVal" style="display:none;">false</div>';
 
 } else {
     //Validation passed

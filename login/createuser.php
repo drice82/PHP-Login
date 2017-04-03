@@ -5,7 +5,7 @@ include_once 'config.php';
 //Pull username, generate new ID and hash password
 $newid = uniqid(rand(), false);
 $newuser = $_POST['newuser'];
-$newpw = password_hash($_POST['password1'], PASSWORD_DEFAULT);
+$newpw = $_POST['password1'];
 $pw1 = $_POST['password1'];
 $pw2 = $_POST['password2'];
 $newemail = $_POST['email'];

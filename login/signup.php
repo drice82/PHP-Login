@@ -51,10 +51,10 @@
 
 $( "#usersignup" ).validate({
   rules: {
-	email: {
-		email: true,
-		required: true
-	},
+//	email: {
+//		email: true,
+//		required: true
+//	},
     password1: {
       required: true,
       minlength: 4

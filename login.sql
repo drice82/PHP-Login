@@ -3,6 +3,7 @@ CREATE TABLE `members` (
   `username` varchar(65) NOT NULL DEFAULT '',
   `password` varchar(65) NOT NULL DEFAULT '',
   `email` varchar(65) NOT NULL,
+  `price` float NOT NULL DEFAULT '0.1',
   `verified` tinyint(1) NOT NULL DEFAULT '1',
   `enable` tinyint(1) NOT NULL DEFAULT '1',
   `mod_timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,

@@ -2,7 +2,6 @@
 require "login/dbconf.php";
 $uid="";
 $keys="";
-$unitprice = 0.1;
 
 $ali_price=trim($_GET[aliprice]);
 $ali_title=trim(urldecode($_GET[alititle]));
@@ -17,20 +16,25 @@ try {
 
     $stmt=$conn->query("SELECT * from members WHERE username=$ali_title");
     if ($stmt->rowCount()==0){exit("error");}
-
-      foreach ($conn->query("SELECT * from members WHERE username=$ali_title") as $row) {
-	$unitprice=$row['price'];
-      }
+    foreach ($stmt as $row) {
+        $unitprice=$row['price'];
+        $expire_time=$row['expire_time'];
+    }
     $moretime = $ali_price/$unitprice*2592000;
-    $stmt = $conn->prepare("UPDATE members SET expire_time=expire_time+:moretime WHERE username=:username");
+
+    if ($expire_time > time()) {$expire_time = $expire_time+$moretime;}
+    else {$expire_time = time()+$moretime;}
+
+    $stmt = $conn->prepare("UPDATE members SET expire_time=:expire_time WHERE username=:username");
     $stmt->bindParam(':username', $ali_title);
-    $stmt->bindParam(':moretime', $moretime);
+    $stmt->bindParam(':expire_time', $expire_time);
 
     $stmt->execute();
 
     }
 catch(PDOException $e)
 {
+//    echo "ERROR";
     echo "Error: " . $e->getMessage();
 }
 $conn = null;

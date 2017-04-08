@@ -38,7 +38,6 @@
 
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-
 	  
 <script>
 $( "#usersignup" ).validate({

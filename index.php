@@ -36,13 +36,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="login/js/bootstrap.js"></script>
 
-    <script src="/login/js/signup.js"></script>
-
-
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
-<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-<script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
 
+	  
+<script>
 $( "#usersignup" ).validate({
   rules: {
     password1: {

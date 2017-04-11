@@ -25,7 +25,7 @@ try {
     if ($expire_time > time()) {$expire_time = $expire_time+$moretime;}
     else {$expire_time = time()+$moretime;}
 
-    $stmt = $conn->prepare("UPDATE members SET expire_time=:expire_time WHERE username=:username");
+    $stmt = $conn->prepare("UPDATE members SET expire_time=:expire_time, enable=1 WHERE username=:username");
     $stmt->bindParam(':username', $ali_title);
     $stmt->bindParam(':expire_time', $expire_time);
 

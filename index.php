@@ -24,7 +24,7 @@
       </form>
 
       <div class="form-signin">
-        <div class="alert alert-success">Your username is <strong><?php echo $_SESSION['username'];?></strong>. <br> You have been <strong>successfully logged in</strong>.</div>
+        <div class="alert alert-success">您要修改密码的用户名是： <strong><?php echo $_SESSION['username'];?></strong>. <br> 请勿使用重要密码，密码修改后2分钟同步到PT盒子.</div>
         <a href="login/logout.php" class="btn btn-default btn-lg btn-block">Logout</a>
       </div>
 
